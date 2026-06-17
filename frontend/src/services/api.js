@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:1337/api",
+  baseURL: "https://kaznews-backend.onrender.com/api",
 });
 
 export default API;

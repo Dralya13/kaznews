@@ -7,6 +7,7 @@ function Header() {
 
   const [search, setSearch] = useState("");
   const [darkMode, setDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme =
@@ -52,7 +53,14 @@ function Header() {
           KAZNEWS
         </Link>
 
-        <nav className="main-nav">
+        <button
+          className="burger-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </button>
+
+        <nav className={`main-nav ${menuOpen ? "active" : ""}`}>
 
           <Link to="/">
             Главная

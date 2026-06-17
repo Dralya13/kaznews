@@ -31,7 +31,7 @@ function ArticlesPage() {
           <div className="page-hero">
 
             <img
-              src={`http://localhost:1337${featured.image?.url}`}
+              src={`https://kaznews-backend.onrender.com${featured.image?.url}`}
               alt={featured.title}
             />
 

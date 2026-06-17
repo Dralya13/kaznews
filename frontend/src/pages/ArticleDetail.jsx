@@ -24,7 +24,7 @@ function ArticleDetail() {
   if (!article) return <h2>Загрузка...</h2>;
 
   const imageUrl = article.image
-    ? `http://localhost:1337${article.image.url}`
+    ? `https://kaznews-backend.onrender.com${article.image.url}`
     : "";
 
   return (

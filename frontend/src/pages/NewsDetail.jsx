@@ -42,7 +42,7 @@ function NewsDetail() {
   }
 
   const imageUrl = news.image
-    ? `http://localhost:1337${news.image.url}`
+    ? `https://kaznews-backend.onrender.com${news.image.url}`
     : "https://via.placeholder.com/1200x700";
 
   const relatedNews = allNews

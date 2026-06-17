@@ -24,7 +24,7 @@ function BlogDetail() {
   if (!blog) return <h2>Загрузка...</h2>;
 
   const imageUrl = blog.image
-    ? `http://localhost:1337${blog.image.url}`
+    ? `https://kaznews-backend.onrender.com${blog.image.url}`
     : "";
 
   return (

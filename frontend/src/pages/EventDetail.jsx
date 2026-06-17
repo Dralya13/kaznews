@@ -24,7 +24,7 @@ function EventDetail() {
   if (!event) return <h2>Загрузка...</h2>;
 
   const imageUrl = event.image
-    ? `http://localhost:1337${event.image.url}`
+    ? `https://kaznews-backend.onrender.com${event.image.url}`
     : "";
 
   return (

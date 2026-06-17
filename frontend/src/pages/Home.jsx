@@ -15,22 +15,42 @@ function Home() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    API.get("/news-items?populate=*")
-      .then((res) => setNews(res.data.data))
-      .catch(console.error);
+  API.get("/news-items?populate=*")
+    .then((res) => {
+      console.log("NEWS:", res.data);
+      setNews(res.data.data || []);
+    })
+    .catch((err) => {
+      console.error("NEWS ERROR:", err);
+    });
 
-    API.get("/blogs?populate=*")
-      .then((res) => setBlogs(res.data.data))
-      .catch(console.error);
+  API.get("/blogs?populate=*")
+    .then((res) => {
+      console.log("BLOGS:", res.data);
+      setBlogs(res.data.data || []);
+    })
+    .catch((err) => {
+      console.error("BLOGS ERROR:", err);
+    });
 
-    API.get("/articles?populate=*")
-      .then((res) => setArticles(res.data.data))
-      .catch(console.error);
+  API.get("/articles?populate=*")
+    .then((res) => {
+      console.log("ARTICLES:", res.data);
+      setArticles(res.data.data || []);
+    })
+    .catch((err) => {
+      console.error("ARTICLES ERROR:", err);
+    });
 
-    API.get("/events?populate=*")
-      .then((res) => setEvents(res.data.data))
-      .catch(console.error);
-  }, []);
+  API.get("/events?populate=*")
+    .then((res) => {
+      console.log("EVENTS:", res.data);
+      setEvents(res.data.data || []);
+    })
+    .catch((err) => {
+      console.error("EVENTS ERROR:", err);
+    });
+}, []);
 
   const featuredNews = news.find(
     (item) => item.featured
@@ -52,7 +72,7 @@ function Home() {
             <div
               className="hero"
               style={{
-                backgroundImage: `url(http://localhost:1337${featuredNews.image?.url})`,
+                backgroundImage: `url(https://kaznews-backend.onrender.com${featuredNews.image?.url})`,
               }}
             >
               <div className="hero-overlay">
